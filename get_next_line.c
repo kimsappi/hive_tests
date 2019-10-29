@@ -6,7 +6,7 @@
 /*   By: ksappi <ksappi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 11:38:27 by ksappi            #+#    #+#             */
-/*   Updated: 2019/10/29 12:15:20 by ksappi           ###   ########.fr       */
+/*   Updated: 2019/10/29 12:43:22 by ksappi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,29 @@
 #include <fcntl.h>
 #include <stdio.h>
 
-void read_one_file(void) // vitsiin
+void read_one_file(void)
 {
 	char *line;
 	int file = open("get_next_line.h", O_RDONLY);
-	printf("file: %d\n", file);
 	int i = 1;
 	while (i > 0)
 	{
 		i = get_next_line(file, &line);
-		printf("%d: %s\n",i, line);
+		printf("%s\n", line);
+		free(line);
+	}
+	close(file);
+}
+
+void read_long_line(void)
+{
+	char *line;
+	int file = open("gnllongline", O_RDONLY);
+	int i = 1;
+	while (1 > 0)
+	{
+		i = get_next_line(file, &line);
+		printf("%s\n", line);
 		free(line);
 	}
 	close(file);
@@ -57,6 +70,8 @@ int main(int argc, char **argv) {
 		read_one_file();
 	else if (argc == 2)
 		read_2_files();
+	else if (argc == 3)
+		read_long_line();
 	else
 		read_stdin(1);
 	while (1);
