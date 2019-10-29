@@ -6,14 +6,14 @@
 /*   By: ksappi <ksappi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 11:38:27 by ksappi            #+#    #+#             */
-/*   Updated: 2019/10/29 12:00:06 by ksappi           ###   ########.fr       */
+/*   Updated: 2019/10/29 12:15:20 by ksappi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "get_next_line.h"
-#include <fcntl.h> //vitsiin
-#include <stdio.h> //vitsiin
+#include <fcntl.h>
+#include <stdio.h>
 
 void read_one_file(void) // vitsiin
 {
@@ -51,28 +51,14 @@ void read_2_files(void)
 	close(file2);
 }
 
-void	read_stdin(int fd)
-{
-	char *line;
-	int i = 1;
-	while (i > 0)
-	{
-		i = get_next_line(fd, &line);
-		printf("%d: %s\n",i, line);
-		free(line);
-	}
-}
-
 int main(int argc, char **argv) {
 	(void)argv;
 	if (argc == 1)
 		read_one_file();
 	else if (argc == 2)
 		read_2_files();
-	else if (argc == 3)
-		read_stdin(1);
 	else
-		read_stdin(0);
+		read_stdin(1);
 	while (1);
 	return (0);
 }
