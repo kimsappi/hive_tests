@@ -6,7 +6,7 @@
 /*   By: ksappi <ksappi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 12:38:34 by ksappi            #+#    #+#             */
-/*   Updated: 2019/10/21 13:12:49 by ksappi           ###   ########.fr       */
+/*   Updated: 2019/11/11 14:22:35 by ksappi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -582,6 +582,8 @@ int	main(void)
 		ft_putendl("itoa5");
 	if (strcmp(ft_itoa(-2147483648), "-2147483648"))
 		ft_putendl("itoa min");
+	char *itoamintest = ft_itoa(-2147483648);
+	free(itoamintest);
 	if (strcmp(ft_itoa(2147483647), "2147483647"))
 		ft_putendl("itoa max");
 
