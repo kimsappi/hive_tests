@@ -12,6 +12,9 @@
 
 #include "libft.h"
 #include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 void	ft_putcharptr(char *c)
 {
@@ -256,25 +259,25 @@ int	main(void)
 	if (strcmp(reals, tests))
 		ft_putendl("strnstr2 fail");
 	reals = strnstr("ababababababc", "", 20);
-	tests = strnstr("ababababababc", "", 20);
+	tests = ft_strnstr("ababababababc", "", 20);
 	if (strcmp(reals, tests))
 		ft_putendl("strnstr3 fail");
 	if (ft_strnstr("abc", "x", 20))
 		ft_putendl("strnstr4 fail");
 	reals = strnstr("ababababababc", "", 10);
-	tests = strnstr("ababababababc", "", 10);
+	tests = ft_strnstr("ababababababc", "", 10);
 	if (strcmp(reals, tests))
 		ft_putendl("strnstr5 fail");
 	reals = strnstr("ababababababc", "", 11);
-	tests = strnstr("ababababababc", "", 11);
+	tests = ft_strnstr("ababababababc", "", 11);
 	if (strcmp(reals, tests))
 		ft_putendl("strnstr6 fail");
 	reals = strnstr("ababababababc", "", 12);
-	tests = strnstr("ababababababc", "", 12);
+	tests = ft_strnstr("ababababababc", "", 12);
 	if (strcmp(reals, tests))
 		ft_putendl("strnstr7 fail");
 	reals = strnstr("ababababababc", "", 13);
-	tests = strnstr("ababababababc", "", 13);
+	tests = ft_strnstr("ababababababc", "", 13);
 	if (strcmp(reals, tests))
 		ft_putendl("strnstr8 fail");
 	if (ft_strnstr("", "x", 1))
