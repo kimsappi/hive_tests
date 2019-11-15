@@ -6,7 +6,7 @@
 /*   By: ksappi <ksappi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 11:38:27 by ksappi            #+#    #+#             */
-/*   Updated: 2019/10/29 12:43:22 by ksappi           ###   ########.fr       */
+/*   Updated: 2019/11/15 13:08:33 by ksappi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,19 @@ void read_2_files(void)
 	}
 	close(file);
 	close(file2);
+}
+
+void read_stdin()
+{
+	char *line;
+	int i = 1;
+
+	while (i > 0)
+	{
+		i = get_next_line(file, &line);
+		printf("%d: %s\n", i, line);
+		free(line);
+	}
 }
 
 int main(int argc, char **argv) {
