@@ -6,7 +6,7 @@
 /*   By: ksappi <ksappi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 11:38:27 by ksappi            #+#    #+#             */
-/*   Updated: 2019/11/15 13:08:33 by ksappi           ###   ########.fr       */
+/*   Updated: 2019/11/15 13:41:43 by ksappi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,25 @@
 #include "get_next_line.h"
 #include <fcntl.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 
 void read_one_file(void)
 {
-	char *line;
+	char *line = NULL;;
 	int file = open("get_next_line.h", O_RDONLY);
 	int i = 1;
 	while (i > 0)
 	{
+		if (line)
+		{
+			printf("%s\n", line);
+			free(line);
+		}
 		i = get_next_line(file, &line);
-		printf("%s\n", line);
-		free(line);
 	}
+	printf("final return value: %d", i);
 	close(file);
 }
 
@@ -86,7 +93,7 @@ int main(int argc, char **argv) {
 	else if (argc == 3)
 		read_long_line();
 	else
-		read_stdin(1);
+		read_stdin();
 	while (1);
 	return (0);
 }
