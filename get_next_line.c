@@ -6,7 +6,7 @@
 /*   By: ksappi <ksappi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 11:38:27 by ksappi            #+#    #+#             */
-/*   Updated: 2019/11/15 13:41:43 by ksappi           ###   ########.fr       */
+/*   Updated: 2019/11/15 14:08:01 by ksappi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@
 
 void read_one_file(void)
 {
-	char *line = NULL;;
+	char *line = NULL;
 	int file = open("get_next_line.h", O_RDONLY);
+//	int file = open("test.txt", O_RDONLY);
 	int i = 1;
 	while (i > 0)
 	{
@@ -31,8 +32,9 @@ void read_one_file(void)
 			free(line);
 		}
 		i = get_next_line(file, &line);
+//		i = get_next_line(17, &line);
 	}
-	printf("final return value: %d", i);
+	printf("final return value: %d\n", i);
 	close(file);
 }
 
