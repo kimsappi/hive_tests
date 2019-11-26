@@ -6,13 +6,13 @@ double d = 123.45678901234;
 int ret1;
 int ret2;
 	char a[] = "asd";
-ret1 = ret1 = ft_printf("##########asd\n%s\n%c\n", "123", 'X');
+ret1 = ft_printf("##########asd\n%s\n%c\n", "123", 'X');
 ret2 = printf("##########asd\n%s\n%c\n", "123", 'X');
 ret1 != ret2 ? printf("\n\n\n\nERROR\nft: %d\nrl: %d\n\n", ret1, ret2) : 0; printf("\n\n");
 
 ret1 = ft_printf("%-05da\n", 123);
 ret2 = printf("%-05da\n", 123);
-ret1 != ret2 ? printf("\n\n\n\nERROR\nft: %d\nrl: %d\n\n", ret1, ret2, ret1, ret2) : 0; printf("\n\n");
+ret1 != ret2 ? printf("\n\n\n\nERROR\nft: %d\nrl: %d\n\n", ret1, ret2) : 0; printf("\n\n");
 
 ret1 = ft_printf("next line should be hex:\n");
 ret2 = printf("next line should be hex:\n");
