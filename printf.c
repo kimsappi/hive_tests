@@ -109,8 +109,13 @@ ret2 = printf("ft:%f\n", d);
 ret1 != ret2 ? printf("\n\n\n\nERROR\nft: %d\nrl: %d\n\n", ret1, ret2) : 0; printf("\n\n");
 
 d = -0.000001;
-ret1 = ft_printf("ft:%f\n", d);
-ret2 = printf("ft:%f\n", d);
+ret1 = ft_printf("ft:%f#\n", d);
+ret2 = printf("ft:%f#\n", d);
+ret1 != ret2 ? printf("\n\n\n\nERROR\nft: %d\nrl: %d\n\n", ret1, ret2) : 0; printf("\n\n");
+
+d = -3.99;
+ret1 = ft_printf("ft:%.1f#\n", d);
+ret2 = printf("ft:%.1f#\n", d);
 ret1 != ret2 ? printf("\n\n\n\nERROR\nft: %d\nrl: %d\n\n", ret1, ret2) : 0; printf("\n\n");
 
 ret1 = ft_printf("%.3s\n", "hello");
@@ -119,6 +124,22 @@ ret1 != ret2 ? printf("\n\n\n\nERROR\nft: %d\nrl: %d\n\n", ret1, ret2) : 0; prin
 
 ret1 = ft_printf("%p\n", &d);
 ret2 = printf("%p\n", &d);
+ret1 != ret2 ? printf("\n\n\n\nERROR\nft: %d\nrl: %d\n\n", ret1, ret2) : 0; printf("\n\n");
+
+ret1 = ft_printf("#%20p#\n", &d);
+ret2 = printf("#%20p#\n", &d);
+ret1 != ret2 ? printf("\n\n\n\nERROR\nft: %d\nrl: %d\n\n", ret1, ret2) : 0; printf("\n\n");
+
+ret1 = ft_printf("#%15p#\n", &d);
+ret2 = printf("#%15p#\n", &d);
+ret1 != ret2 ? printf("\n\n\n\nERROR\nft: %d\nrl: %d\n\n", ret1, ret2) : 0; printf("\n\n");
+
+ret1 = ft_printf("#%-20p#\n", &d);
+ret2 = printf("#%20p#\n", &d);
+ret1 != ret2 ? printf("\n\n\n\nERROR\nft: %d\nrl: %d\n\n", ret1, ret2) : 0; printf("\n\n");
+
+ret1 = ft_printf("#%-15p#\n", &d);
+ret2 = printf("#%15p#\n", &d);
 ret1 != ret2 ? printf("\n\n\n\nERROR\nft: %d\nrl: %d\n\n", ret1, ret2) : 0; printf("\n\n");
 
 return 0;
