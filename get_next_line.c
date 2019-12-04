@@ -6,7 +6,7 @@
 /*   By: ksappi <ksappi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 11:38:27 by ksappi            #+#    #+#             */
-/*   Updated: 2019/11/15 14:08:01 by ksappi           ###   ########.fr       */
+/*   Updated: 2019/12/04 14:28:50 by ksappi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void read_stdin()
 
 	while (i > 0)
 	{
-		i = get_next_line(file, &line);
+		i = get_next_line(0, &line);
 		printf("%d: %s\n", i, line);
 		free(line);
 	}
